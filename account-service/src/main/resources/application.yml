@@ -3,14 +3,14 @@ logging:
     io:
       seata: error
 server:
-  port: 9091
+  port: 9093
 spring:
   application:
-    name: order-service
+    name: account-service
   cloud:
     alibaba:
       seata:
-        tx-service-group: order-service-group
+        tx-service-group: account-service-group
     nacos:
       discovery:
         server-addr: 192.168.0.132:8848
@@ -20,7 +20,7 @@ spring:
         password: nacos
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.0.132:3306/seata_order?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://192.168.0.132:3306/seata_account?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
     username: root
     password: root
 seata:

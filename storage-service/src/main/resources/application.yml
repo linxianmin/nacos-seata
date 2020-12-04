@@ -1,7 +1,7 @@
 logging:
   level:
     io:
-      seata: debug
+      seata: error
 server:
   port: 9092
 spring:
@@ -24,11 +24,19 @@ spring:
     username: root
     password: root
 seata:
+  registry:
+    type: nacos
+    nacos:
+      server-addr: 192.168.0.132:8848
+      group: SEATA_GROUP
+      namespace: 386e230f-13dd-4fde-9c34-4d0e01383b98
+      username: nacos
+      password: nacos
   config:
     type: nacos
     nacos:
       server-addr: 192.168.0.132:8848
-      group : SEATA_GROUP
+      group: SEATA_GROUP
       namespace: 386e230f-13dd-4fde-9c34-4d0e01383b98
       username: nacos
       password: nacos

@@ -5,7 +5,6 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.work.storage.entity.Storage;
 import com.work.storage.repository.StorageDAO;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 
@@ -31,7 +30,6 @@ public class StorageService {
      * @param commodityCode
      * @param count
      */
-    @Transactional(rollbackFor = Exception.class)
     public void deduct(String commodityCode, int count) {
         if (commodityCode.equals("product-2")) {
             throw new RuntimeException("异常:模拟业务异常:Storage branch exception");
